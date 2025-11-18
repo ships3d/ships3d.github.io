@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"/><link rel="icon" type="image/png" href="favicon.png"/><link rel="manifest" href="manifest.json"/><title>Ships 3D</title><script async src="https://www.googletagmanager.com/gtag/js?id=G-ECQNBN6V0V"></script><script src="https://accounts.google.com/gsi/client" async defer="defer"></script><script>try {
+                window.googletag = window.googletag || { cmd: [] };
+
+                window.ramp = window.ramp || {};
+                window.ramp.que = window.ramp.que || [];
+                window.ramp.passiveMode = true;
+
+                window._pwGA4PageviewId = "".concat(Date.now());
+                window.dataLayer = window.dataLayer || [];
+                window.gtag =
+                    window.gtag ||
+                    function () {
+                        dataLayer.push(arguments);
+                    };
+                gtag("js", new Date());
+                gtag("config", "G-MEBPBPD2G1", {
+                    cookie_flags: "samesite=none;secure",
+                });
+                gtag("config", "G-ECQNBN6V0V", {
+                    send_page_view: false,
+                    cookie_flags: "samesite=none;secure",
+                });
+                gtag("event", "ramp_js", {
+                    send_to: "G-ECQNBN6V0V",
+                    pageview_id: window._pwGA4PageviewId,
+                });
+            } catch (e) {
+                console.log("ga error", e);
+            }</script><style>@keyframes ships3d-loading {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+
+            .ships3d-title {
+                font-size: 30px;
+                @media (max-width: 600px), (max-height: 600px) {
+                    font-size: 20px;
+                }
+            }
+
+            .ships3d-small-text {
+                font-size: 17px;
+                @media (max-width: 600px), (max-height: 600px) {
+                    font-size: 13px;
+                }
+            }
+
+            .ships3d-country-picker {
+                width: 300px;
+                @media (max-width: 600px), (max-height: 600px) {
+                    width: 200px;
+                }
+            }</style></head><body style="background: black; margin: 0 0 0 0"><script>const ships3dLoadingErrorHandler = (e) => {
+                const loadingElement = document.getElementById("loadingtext");
+                loadingElement.textContent = `An error occurred while loading the game.
+Check your internet connection.
+Retrying in 5 seconds...`;
+                setTimeout(() => location.reload(), 5000);
+            };
+
+            const ships3dLoadScriptAsync = (src, onError) => {
+                const script = document.createElement("script");
+                script.defer = true;
+                script.src = src;
+                script.type = "text/javascript";
+                script.onerror = onError;
+                document.head.append(script);
+            };
+
+            if (
+                ![...document.querySelectorAll("script")].find((s) =>
+                    s.src.match("^https?://(yp3d.com|localhost|0\.0\.0\.0|192\.168\.1\..*).*main.js$"),
+                )
+            ) {
+                ships3dLoadScriptAsync("main.js", ships3dLoadingErrorHandler);
+            }</script><div id="root"></div><div id="loadingtext" class="ships3d-title" style="color: white; margin: 20px">Ships 3D is loading...<p class="ships3d-small-text">For the best experience, use the latest Google Chrome Browser</p><div style="background-color: white;
+                    height: 30px;
+                    margin-top: 10px;
+                    border-radius: 10px;
+                    animation: ships3d-loading 120s forwards cubic-bezier(0.12, 0.9, 0, 0.88);"></div></div></body></html>
